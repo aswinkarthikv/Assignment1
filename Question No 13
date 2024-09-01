@@ -1,0 +1,26 @@
+#include <stdio.h>
+struct Square {
+    float area;  
+
+struct Rectangle {
+    float length; 
+    float breadth;
+};
+
+struct Shape {
+    struct Square square; 
+    struct Rectangle rectangle;
+};
+
+int main() {
+    float side = 4.0; 
+    shape.square.area = side * side; 
+    shape.rectangle.length = 5.0; 
+    shape.rectangle.breadth = 3.0;
+    printf("Area of the Square: %.2f\n", shape.square.area);
+    printf("Length of the Rectangle: %.2f\n", shape.rectangle.length);
+    printf("Breadth of the Rectangle: %.2f\n", shape.rectangle.breadth);
+
+    return 0;
+}
+
