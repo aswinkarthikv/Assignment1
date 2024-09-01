@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main() {
+    float weights[5]; 
+    float totalWeight = 0.0;
+    printf("Enter the weights of the five treasures:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Weight of treasure %d: ", i + 1);
+        scanf("%f", &weights[i]);
+        totalWeight += weights[i]; 
+    }
+    printf("Total weight of the collected treasures: %.2f\n", totalWeight);
+    return 0;
+}
+
+Explanation of Functionality:
+Data Structure:
+We use a float array named weights to store the weights of the five treasures. This allows for easy indexing and manipulation of each treasure's weight.
+
+Reading Input:
+The program prompts the user to input the weight of each treasure using a for loop that iterates 5 times (since there are 5 treasures). The scanf function reads the inputted weights and stores them in the weights array.
+
+Calculating Total Weight:
+As each weight is inputted, it is simultaneously added to the totalWeight variable, which accumulates the sum of all weights.
+
+Displaying Output:
+After the loop completes, the program displays the total weight of the collected treasures using the printf function.
