@@ -1,0 +1,73 @@
+(i)
+
+1) Big O Notation (O):
+
+Represents the upper bound of the time complexity.
+
+This helps to ensure that the algorithm will not take more than a certain amount of time for large inputs.
+
+2)Big Theta Notation (Θ):
+
+Represents the tight bound on the time complexity. It describes the exact asymptotic behavior of the algorithm.
+
+3)Big Omega Notation (Ω):
+
+Represents the lower bound of the time complexity. It describes the best-case scenario of an algorithm's running time.
+
+4)Little o Notation (o):
+
+Represents a strict upper bound that is not tight. It describes that the growth rate of an algorithm is strictly less than a given function.
+
+5)Little ω Notation (ω):
+
+Represents a strict lower bound that is not tight. It describes that the growth rate of an algorithm is strictly greater than a given function.
+
+Example of Asymptotic Analysis
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        // Constant-time operation
+    }
+}
+
+The outer loop runs 𝑛 times.
+
+For each iteration of the outer loop, the inner loop also runs n times.
+
+Hence, the total number of operations is n x n= n²
+
+(ii)
+
+ Time Complexity
+
+1. Initialization:
+    `int i = 1, sum = 0, n;` is a constant-time operation, \( O(1) \).
+
+2. While Loop:
+   - The loop condition `i <= n` is evaluated each time the loop executes.
+   - Inside the loop:
+     - `i = i + 1` increments `i` by 1 and is performed in constant time, \( O(1) \).
+     - `sum = sum + i` adds `i` to `sum`, which is also a constant-time operation, \( O(1) \).
+
+   Loop Iterations:
+   - The variable `i` starts at 1 and is incremented by 1 in each iteration.
+   - The loop continues until `i` exceeds `n`. Hence, the number of iterations is approximately \( n \), as `i` takes values from 1 to `n`.
+
+   Thus, the time complexity of the loop is \( O(n) \) because the loop runs \( n \) times.
+
+   Overall Time Complexity:
+   - Combining the constant-time initialization with the \( O(n) \) time complexity of the loop, the overall time complexity is \( O(n) \).
+
+Space Complexity
+
+1. Variables:
+   - `int i`, `sum`, and `n` use a constant amount of space, \( O(1) \).
+
+2. No Additional Space:
+   - The space used by the algorithm does not depend on the input size \( n \) other than the fixed-size variables.
+
+   Overall Space Complexity:
+   - The space complexity is \( O(1) \) because no extra space is required that scales with the input size.
+
+- Time Complexity: \( O(n) \)
+- Space Complexity: \( O(1) \)
