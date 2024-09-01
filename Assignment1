@@ -1,0 +1,31 @@
+Dynamic memory allocation is a process that allows a program to request and manage memory space during its execution. 
+
+Dynamic memory allocation is typically achieved using functions such as malloc(), calloc(), realloc(), and free():
+
+malloc(size_t size): Allocates a block of memory of the specified size. The memory is uninitialized.
+
+calloc(size_t nitems, size_t size): Allocates a block of memory for an array of nitems, each of size bytes, and initializes all bytes to zero.
+
+realloc(void *ptr, size_t size): Resizes the memory block pointed to by ptr to size bytes. If the new size is larger, the additional memory is uninitialized. If the new size is smaller, the memory is truncated.
+
+free(void *ptr): Frees the memory space pointed to by ptr, making it available for future allocations.
+
+Here's how dynamic memory allocation helps:
+
+Initial Memory Allocation: At the start, Mr. Ram can use malloc or calloc to allocate memory for ten product packets
+
+int* inventory = (int*)malloc(10 * sizeof(int)); // Allocates memory for 10 packets
+
+Increasing the Inventory Size: If market demand increases and Mr. Ram needs to store more than ten packets, he can use realloc to increase the size of the allocated memory. For instance, to increase the inventory size to 20 packets:
+
+inventory = (int*)realloc(inventory, 20 * sizeof(int));
+
+Decreasing the Inventory Size: If the demand decreases and Mr. Ram needs to store fewer packets, he can again use realloc to shrink the memory allocation. For example, to reduce the size to 5 packets:
+
+inventory = (int*)realloc(inventory, 5 * sizeof(int));
+
+Freeing Up Memory: When a product is no longer needed in the inventory, or if the application is closing, Mr. Ram should use free to release the allocated memory back to the system:
+
+free(inventory); 
+inventory = NULL;
+
