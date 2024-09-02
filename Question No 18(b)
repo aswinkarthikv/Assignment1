@@ -1,0 +1,120 @@
+1)Array Definition and Initialization
+
+#include <stdio.h>
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    printf("Array elements:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+2)Insertion Operation
+
+To insert an element into a specific position, you need to shift subsequent elements to the right.
+
+#include <stdio.h>
+void insert(int arr[], int *size, int element, int position) {
+    for (int i = *size; i >= position; i--) {
+        arr[i + 1] = arr[i];
+    }
+    arr[position] = element;
+    (*size)++;
+}
+int main() {
+    int arr[6] = {10, 20, 30, 40, 50};
+    int size = 5;
+    insert(arr, &size, 25, 2);
+    printf("Array after insertion:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+3)Deletion Operation
+
+To delete an element from a specific position, you need to shift subsequent elements to the left.
+
+#include <stdio.h>
+void delete(int arr[], int *size, int position) {
+    for (int i = position; i < *size - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    (*size)--;
+}
+int main() {
+    int arr[5] = {10, 20, 25, 30, 40};
+    int size = 5;
+    delete(arr, &size, 2);
+    printf("Array after deletion:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+4)Traversal Operation
+
+Traversal involves iterating over all elements of the array and performing operations on them.
+
+#include <stdio.h>
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    printf("Array elements:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+5)Search Operation
+
+Searching involves finding whether an element exists in the array.
+
+#include <stdio.h>
+int search(int arr[], int size, int key) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            return i; 
+        }
+    }
+    return -1;
+}
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int key = 30;
+    int index = search(arr, 5, key);
+    if (index != -1) {
+        printf("Element %d found at index %d\n", key, index);
+    } else {
+        printf("Element %d not found\n", key);
+    }
+    return 0;
+}
+
+6)Update Operation
+
+Updating involves changing the value of an element at a specific position.
+
+#include <stdio.h>
+void update(int arr[], int position, int newValue) {
+    arr[position] = newValue;
+}
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    update(arr, 2, 35);
+    printf("Array after update:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
